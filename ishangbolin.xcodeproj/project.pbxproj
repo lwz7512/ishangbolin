@@ -21,6 +21,8 @@
 		CCF73F471887B6FA0064E60F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF73F291887B6F90064E60F /* UIKit.framework */; };
 		CCF73F4F1887B6FA0064E60F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCF73F4D1887B6FA0064E60F /* InfoPlist.strings */; };
 		CCF73F511887B6FA0064E60F /* ishangbolinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF73F501887B6FA0064E60F /* ishangbolinTests.m */; };
+		CCF73F621887BA610064E60F /* back-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF73F601887BA610064E60F /* back-25.png */; };
+		CCF73F631887BA610064E60F /* back-25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF73F611887BA610064E60F /* back-25@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		CCF73F4C1887B6FA0064E60F /* ishangbolinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ishangbolinTests-Info.plist"; sourceTree = "<group>"; };
 		CCF73F4E1887B6FA0064E60F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CCF73F501887B6FA0064E60F /* ishangbolinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ishangbolinTests.m; sourceTree = "<group>"; };
+		CCF73F601887BA610064E60F /* back-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-25.png"; sourceTree = "<group>"; };
+		CCF73F611887BA610064E60F /* back-25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-25@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		CCF73F2B1887B6F90064E60F /* ishangbolin */ = {
 			isa = PBXGroup;
 			children = (
+				CCF73F5F1887BA610064E60F /* images */,
 				CCF73F341887B6F90064E60F /* WebViewAppDelegate.h */,
 				CCF73F351887B6FA0064E60F /* WebViewAppDelegate.m */,
 				CCF73F371887B6FA0064E60F /* Main.storyboard */,
@@ -150,6 +155,15 @@
 				CCF73F4D1887B6FA0064E60F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CCF73F5F1887BA610064E60F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CCF73F601887BA610064E60F /* back-25.png */,
+				CCF73F611887BA610064E60F /* back-25@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +246,8 @@
 				CCF73F3E1887B6FA0064E60F /* Images.xcassets in Resources */,
 				CCF73F301887B6F90064E60F /* InfoPlist.strings in Resources */,
 				CCF73F391887B6FA0064E60F /* Main.storyboard in Resources */,
+				CCF73F621887BA610064E60F /* back-25.png in Resources */,
+				CCF73F631887BA610064E60F /* back-25@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

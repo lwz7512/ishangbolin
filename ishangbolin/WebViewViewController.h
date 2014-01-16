@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface WebViewViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIWebView *mainwebview;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarks;
+- (IBAction)backClickHandler:(id)sender;
+- (IBAction)markClickHandler:(id)sender;
 
 @end
