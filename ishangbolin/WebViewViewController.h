@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewViewController : UIViewController
+@interface WebViewViewController : UIViewController <UIWebViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIWebView *mainwebview;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backBtn;

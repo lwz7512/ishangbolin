@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0357B2188ADBC8000EA4AA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CC0357B1188ADBC8000EA4AA /* Podfile */; };
+		CC51FC971888264F007FCD11 /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51FC951888264F007FCD11 /* WebViewJavascriptBridge.js.txt */; };
+		CC51FC981888264F007FCD11 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = CC51FC961888264F007FCD11 /* WebViewJavascriptBridge.m */; };
+		CCA5B931188982590078837D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA5B930188982590078837D /* libsqlite3.dylib */; };
 		CCF73F261887B6F90064E60F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF73F251887B6F90064E60F /* Foundation.framework */; };
 		CCF73F281887B6F90064E60F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF73F271887B6F90064E60F /* CoreGraphics.framework */; };
 		CCF73F2A1887B6F90064E60F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF73F291887B6F90064E60F /* UIKit.framework */; };
@@ -36,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC0357B1188ADBC8000EA4AA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CC51FC941888264F007FCD11 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		CC51FC951888264F007FCD11 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		CC51FC961888264F007FCD11 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		CCA5B930188982590078837D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CCF73F221887B6F90064E60F /* ishangbolin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ishangbolin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF73F251887B6F90064E60F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CCF73F271887B6F90064E60F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA5B931188982590078837D /* libsqlite3.dylib in Frameworks */,
 				CCF73F281887B6F90064E60F /* CoreGraphics.framework in Frameworks */,
 				CCF73F2A1887B6F90064E60F /* UIKit.framework in Frameworks */,
 				CCF73F261887B6F90064E60F /* Foundation.framework in Frameworks */,
@@ -83,9 +93,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC51FC931888264F007FCD11 /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				CC51FC941888264F007FCD11 /* WebViewJavascriptBridge.h */,
+				CC51FC951888264F007FCD11 /* WebViewJavascriptBridge.js.txt */,
+				CC51FC961888264F007FCD11 /* WebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
 		CCF73F191887B6F90064E60F = {
 			isa = PBXGroup;
 			children = (
+				CC0357B1188ADBC8000EA4AA /* Podfile */,
 				CCF73F2B1887B6F90064E60F /* ishangbolin */,
 				CCF73F4A1887B6FA0064E60F /* ishangbolinTests */,
 				CCF73F241887B6F90064E60F /* Frameworks */,
@@ -105,6 +126,7 @@
 		CCF73F241887B6F90064E60F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCA5B930188982590078837D /* libsqlite3.dylib */,
 				CCF73F251887B6F90064E60F /* Foundation.framework */,
 				CCF73F271887B6F90064E60F /* CoreGraphics.framework */,
 				CCF73F291887B6F90064E60F /* UIKit.framework */,
@@ -116,6 +138,7 @@
 		CCF73F2B1887B6F90064E60F /* ishangbolin */ = {
 			isa = PBXGroup;
 			children = (
+				CC51FC931888264F007FCD11 /* WebViewJavascriptBridge */,
 				CCF73F5F1887BA610064E60F /* images */,
 				CCF73F341887B6F90064E60F /* WebViewAppDelegate.h */,
 				CCF73F351887B6FA0064E60F /* WebViewAppDelegate.m */,
@@ -245,8 +268,10 @@
 			files = (
 				CCF73F3E1887B6FA0064E60F /* Images.xcassets in Resources */,
 				CCF73F301887B6F90064E60F /* InfoPlist.strings in Resources */,
+				CC51FC971888264F007FCD11 /* WebViewJavascriptBridge.js.txt in Resources */,
 				CCF73F391887B6FA0064E60F /* Main.storyboard in Resources */,
 				CCF73F621887BA610064E60F /* back-25.png in Resources */,
+				CC0357B2188ADBC8000EA4AA /* Podfile in Resources */,
 				CCF73F631887BA610064E60F /* back-25@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCF73F3C1887B6FA0064E60F /* WebViewViewController.m in Sources */,
+				CC51FC981888264F007FCD11 /* WebViewJavascriptBridge.m in Sources */,
 				CCF73F361887B6FA0064E60F /* WebViewAppDelegate.m in Sources */,
 				CCF73F321887B6F90064E60F /* main.m in Sources */,
 			);
@@ -477,6 +503,7 @@
 				CCF73F561887B6FA0064E60F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCF73F571887B6FA0064E60F /* Build configuration list for PBXNativeTarget "ishangbolinTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +512,7 @@
 				CCF73F591887B6FA0064E60F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
