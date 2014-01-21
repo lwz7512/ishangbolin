@@ -8,8 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CC0357B2188ADBC8000EA4AA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CC0357B1188ADBC8000EA4AA /* Podfile */; };
+		CC096F47188D110E002929C7 /* Favorite.m in Sources */ = {isa = PBXBuildFile; fileRef = CC096F46188D110E002929C7 /* Favorite.m */; };
 		CC51FC971888264F007FCD11 /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC51FC951888264F007FCD11 /* WebViewJavascriptBridge.js.txt */; };
 		CC51FC981888264F007FCD11 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = CC51FC961888264F007FCD11 /* WebViewJavascriptBridge.m */; };
+		CC97E842188E1C870047DBB4 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97E83D188E1C870047DBB4 /* FMDatabaseAdditions.m */; };
+		CC97E843188E1C870047DBB4 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97E83F188E1C870047DBB4 /* FMDatabasePool.m */; };
+		CC97E844188E1C870047DBB4 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97E841188E1C870047DBB4 /* FMDatabaseQueue.m */; };
+		CC97E847188E1ED20047DBB4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97E846188E1ED20047DBB4 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CC97E849188E3B070047DBB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97E848188E3B070047DBB4 /* QuartzCore.framework */; };
+		CC97E851188E3C1B0047DBB4 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97E850188E3C1B0047DBB4 /* Toast+UIView.m */; };
+		CC97E857188E3CC00047DBB4 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97E854188E3CC00047DBB4 /* FMDatabase.m */; };
+		CC97E858188E3CC00047DBB4 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97E856188E3CC00047DBB4 /* FMResultSet.m */; };
 		CCA5B931188982590078837D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA5B930188982590078837D /* libsqlite3.dylib */; };
 		CCF73F261887B6F90064E60F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF73F251887B6F90064E60F /* Foundation.framework */; };
 		CCF73F281887B6F90064E60F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCF73F271887B6F90064E60F /* CoreGraphics.framework */; };
@@ -41,9 +50,26 @@
 
 /* Begin PBXFileReference section */
 		CC0357B1188ADBC8000EA4AA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CC096F45188D110E002929C7 /* Favorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Favorite.h; sourceTree = "<group>"; };
+		CC096F46188D110E002929C7 /* Favorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Favorite.m; sourceTree = "<group>"; };
 		CC51FC941888264F007FCD11 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		CC51FC951888264F007FCD11 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		CC51FC961888264F007FCD11 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		CC97E83C188E1C870047DBB4 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		CC97E83D188E1C870047DBB4 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		CC97E83E188E1C870047DBB4 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		CC97E83F188E1C870047DBB4 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		CC97E840188E1C870047DBB4 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		CC97E841188E1C870047DBB4 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CC97E845188E1ED20047DBB4 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		CC97E846188E1ED20047DBB4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		CC97E848188E3B070047DBB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CC97E84F188E3C1B0047DBB4 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		CC97E850188E3C1B0047DBB4 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		CC97E853188E3CC00047DBB4 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		CC97E854188E3CC00047DBB4 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		CC97E855188E3CC00047DBB4 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		CC97E856188E3CC00047DBB4 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		CCA5B930188982590078837D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CCF73F221887B6F90064E60F /* ishangbolin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ishangbolin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF73F251887B6F90064E60F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC97E849188E3B070047DBB4 /* QuartzCore.framework in Frameworks */,
 				CCA5B931188982590078837D /* libsqlite3.dylib in Frameworks */,
 				CCF73F281887B6F90064E60F /* CoreGraphics.framework in Frameworks */,
 				CCF73F2A1887B6F90064E60F /* UIKit.framework in Frameworks */,
@@ -93,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC096F44188D10C3002929C7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				CC096F45188D110E002929C7 /* Favorite.h */,
+				CC096F46188D110E002929C7 /* Favorite.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		CC51FC931888264F007FCD11 /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,14 +139,49 @@
 			path = WebViewJavascriptBridge;
 			sourceTree = "<group>";
 		};
+		CC9234E7188D382E00BE28B6 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				CC97E845188E1ED20047DBB4 /* JSONKit.h */,
+				CC97E846188E1ED20047DBB4 /* JSONKit.m */,
+				CC97E83C188E1C870047DBB4 /* FMDatabaseAdditions.h */,
+				CC97E83D188E1C870047DBB4 /* FMDatabaseAdditions.m */,
+				CC97E83E188E1C870047DBB4 /* FMDatabasePool.h */,
+				CC97E83F188E1C870047DBB4 /* FMDatabasePool.m */,
+				CC97E840188E1C870047DBB4 /* FMDatabaseQueue.h */,
+				CC97E841188E1C870047DBB4 /* FMDatabaseQueue.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		CC97E84E188E3C1B0047DBB4 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				CC97E84F188E3C1B0047DBB4 /* Toast+UIView.h */,
+				CC97E850188E3C1B0047DBB4 /* Toast+UIView.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		CC97E852188E3CC00047DBB4 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				CC97E853188E3CC00047DBB4 /* FMDatabase.h */,
+				CC97E854188E3CC00047DBB4 /* FMDatabase.m */,
+				CC97E855188E3CC00047DBB4 /* FMResultSet.h */,
+				CC97E856188E3CC00047DBB4 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		CCF73F191887B6F90064E60F = {
 			isa = PBXGroup;
 			children = (
-				CC0357B1188ADBC8000EA4AA /* Podfile */,
 				CCF73F2B1887B6F90064E60F /* ishangbolin */,
 				CCF73F4A1887B6FA0064E60F /* ishangbolinTests */,
 				CCF73F241887B6F90064E60F /* Frameworks */,
 				CCF73F231887B6F90064E60F /* Products */,
+				CC0357B1188ADBC8000EA4AA /* Podfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				CCA5B930188982590078837D /* libsqlite3.dylib */,
+				CC97E848188E3B070047DBB4 /* QuartzCore.framework */,
 				CCF73F251887B6F90064E60F /* Foundation.framework */,
 				CCF73F271887B6F90064E60F /* CoreGraphics.framework */,
 				CCF73F291887B6F90064E60F /* UIKit.framework */,
@@ -138,6 +210,10 @@
 		CCF73F2B1887B6F90064E60F /* ishangbolin */ = {
 			isa = PBXGroup;
 			children = (
+				CC97E852188E3CC00047DBB4 /* FMDB */,
+				CC97E84E188E3C1B0047DBB4 /* Toast */,
+				CC9234E7188D382E00BE28B6 /* JSONKit */,
+				CC096F44188D10C3002929C7 /* models */,
 				CC51FC931888264F007FCD11 /* WebViewJavascriptBridge */,
 				CCF73F5F1887BA610064E60F /* images */,
 				CCF73F341887B6F90064E60F /* WebViewAppDelegate.h */,
@@ -291,10 +367,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC97E851188E3C1B0047DBB4 /* Toast+UIView.m in Sources */,
+				CC096F47188D110E002929C7 /* Favorite.m in Sources */,
 				CCF73F3C1887B6FA0064E60F /* WebViewViewController.m in Sources */,
 				CC51FC981888264F007FCD11 /* WebViewJavascriptBridge.m in Sources */,
 				CCF73F361887B6FA0064E60F /* WebViewAppDelegate.m in Sources */,
+				CC97E842188E1C870047DBB4 /* FMDatabaseAdditions.m in Sources */,
+				CC97E858188E3CC00047DBB4 /* FMResultSet.m in Sources */,
+				CC97E843188E1C870047DBB4 /* FMDatabasePool.m in Sources */,
+				CC97E844188E1C870047DBB4 /* FMDatabaseQueue.m in Sources */,
 				CCF73F321887B6F90064E60F /* main.m in Sources */,
+				CC97E857188E3CC00047DBB4 /* FMDatabase.m in Sources */,
+				CC97E847188E1ED20047DBB4 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

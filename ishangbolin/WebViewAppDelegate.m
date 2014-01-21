@@ -7,14 +7,69 @@
 //
 
 #import "WebViewAppDelegate.h"
+#import "FMDatabase.h"
+
 
 @implementation WebViewAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.databaseName = @"Favorites.db";
+    
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDir = [documentPaths objectAtIndex:0];
+    self.databasePath = [documentDir stringByAppendingPathComponent:self.databaseName];
+    
+    [self createAndCheckDatabase];
+    
     // Override point for customization after application launch.
     return YES;
 }
+
+-(void) createAndCheckDatabase
+{
+    BOOL success;
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    success = [fileManager fileExistsAtPath:self.databasePath];
+    
+    if(success) return;//create only once....
+    
+    //The database is being created and stored in the documents directory.
+    //You can only create, update, delete and insert data into a database in your applications documents directory in the iOS.
+    //It’s the only location that allows you to edit the database.
+    //If you wanted to only access data and not modify it,
+    //you could store your database in the resources of your project.
+    //If you are starting with an existing database that you created,
+    //you need to copy the database from your resources directory to the application documents directory.
+    
+    //NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.databaseName];
+    //[fileManager copyItemAtPath:databasePathFromApp toPath:self.databasePath error:nil];
+    
+    NSString *createTableSql = @"CREATE TABLE favorites (";
+    createTableSql = [ createTableSql stringByAppendingString:@"id INTEGER PRIMARY KEY AUTOINCREMENT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"name TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"business_id TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"s_photo_url TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"categories TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"rating_s_img_url TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"address TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"telephone TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"longitude TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"latitude TEXT DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"create_time INTEGER DEFAULT NULL, "];
+    createTableSql = [ createTableSql stringByAppendingString:@"memo TEXT DEFAULT NULL)"];
+    
+    FMDatabase *database = [FMDatabase databaseWithPath:_databasePath];
+    NSLog(@">>> databased created!");
+    
+    [database open];
+    [database executeUpdate:createTableSql];
+    [database close];
+    
+    NSLog(@">>>table ceated!");
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

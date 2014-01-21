@@ -10,6 +10,8 @@
 	<string>ishangbolin</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>53C65167-5272-4538-B68F-259ECD0C5AE9</key>
+		<string>https://github.com/johnezang/JSONKit.git</string>
 		<key>FAE38498-A42A-4AB7-87A1-2E6750694D34</key>
 		<string>ssh://github.com/lwz7512/ishangbolin.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>ishangbolin.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>53C65167-5272-4538-B68F-259ECD0C5AE9</key>
+		<string>../../ishangbolin/JSONKit</string>
 		<key>FAE38498-A42A-4AB7-87A1-2E6750694D34</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>FAE38498-A42A-4AB7-87A1-2E6750694D34</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ishangbolin</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>53C65167-5272-4538-B68F-259ECD0C5AE9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JSONKit</string>
 		</dict>
 	</array>
 </dict>
