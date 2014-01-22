@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarks;
 - (IBAction)backClickHandler:(id)sender;
 - (IBAction)markClickHandler:(id)sender;
+- (IBAction)openShopPageHandler:(id)sender;
 
 @end

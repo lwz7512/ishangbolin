@@ -13,6 +13,7 @@
 #import "Favorite.h"
 #import "JSONKit.h"
 #import "Toast+UIView.h"
+#import "ShopPageViewController.h"
 
 
 @interface WebViewViewController ()
@@ -21,17 +22,18 @@
 
 @implementation WebViewViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //NSString *url=@"http://162.243.231.159:3000/ngapp/dist";
-    NSString *url = @"http://172.168.1.41:3000/ngapp/app";
+    NSString *url = @"http://172.168.1.124:3000/ngapp/app";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [self.mainwebview loadRequest:request];
     
 	// webview init only once!
     if (_bridge) { return; }
-    [WebViewJavascriptBridge enableLogging];
+//    [WebViewJavascriptBridge enableLogging];
     
     _bridge = [WebViewJavascriptBridge bridgeForWebView:_mainwebview webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
         NSLog(@"ObjC received message from JS: %@", data);
@@ -40,13 +42,20 @@
     
     //*** prepare for javascript callback! ***
     [_bridge registerHandler:@"getFavorites" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSLog(@"getFavorites called: %@", data);
         //fetch database data and send to callback below!
-        NSString *json = [self objsToJson:[self getFavorites]];
+        NSString *json = [self dicsToJson:[self getFavorites]];
+        //NSLog(@"returned favorites: %@", json);
+        if (nil == json) json = @"[]";
         responseCallback(json);
     }];
     
-}
+    //*** prepare for open new view js callback! ***
+    [_bridge registerHandler:@"openURL" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [self openShopPageHandler: data];
+    }];
+    
+}//end of viewDidLoad
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -69,6 +78,7 @@
     //init javascript callback for iOS
     [self.mainwebview stringByEvaluatingJavaScriptFromString:@"window.iOS = {}"];
     
+//    [self.view makeToast:@"网页加载完成！" duration:1.0 position:@"center"];//popup message!
 }
 
 -(void)didFailLoadWithError:(UIWebView *)webView {
@@ -90,20 +100,24 @@
     //call javascript function...
     NSString *bizInfo = [self.mainwebview stringByEvaluatingJavaScriptFromString:@"doFavorite()"];
     
-    //NSLog(@"string >>> %@\n\n",bizInfo);
-    
-    if (nil != bizInfo) {
+    if (nil != bizInfo && [bizInfo length]) {//got the biz info json string!
+        
+//        NSLog(@">>> to save the favorite:\n %@", bizInfo);
+        
         Favorite *fav = [self jsonToObj:bizInfo];
+        if (fav.business_id == nil) {
+            return;
+        }
         BOOL exist = [self checkExist:fav.business_id];
         if (!exist) {
-            [self insertFavorite:fav];
+            [self insertFavorite:fav];//insert the favorite shop...
+            NSLog(@">>> favorite saved!");
         }
         
         [self.view makeToast:@"收藏成功！"];//popup message!
-        NSLog(@">>> favorite saved!");
         
     }else{
-        NSLog(@"oo, it's null, %@\n\n", bizInfo);
+        NSLog(@"oo, it's blank string, %@\n\n", bizInfo);
     }
     
     if ([bizInfo isKindOfClass:[NSNull class]]) {
@@ -117,6 +131,16 @@
 }//end of markClickHandler
 
 
+- (void)openShopPageHandler:(NSString *) url {
+
+    UIStoryboard *Main = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ShopPageViewController *shopage = [Main instantiateViewControllerWithIdentifier:@"shopage"];
+    shopage.url = url;
+    [self.navigationController pushViewController:shopage animated:true];
+
+}
+
+
 -(NSMutableArray *) getFavorites {
     
     NSMutableArray *favorites = [[NSMutableArray alloc] init];
@@ -127,24 +151,28 @@
     
     FMResultSet *results = [db executeQuery:@"SELECT * FROM favorites"];
     
+    
     while([results next]) {
-        Favorite *fav = [[Favorite alloc] init];
-        fav.name = [results stringForColumn:@"name"];
-        fav.business_id = [results stringForColumn:@"business_id"];
-        fav.s_photo_url = [results stringForColumn:@"s_photo_url"];
-        fav.categories = [results stringForColumn:@"categories"];
-        fav.rating_s_img_url = [results stringForColumn:@"rating_s_img_url"];
-        fav.address = [results stringForColumn:@"address"];
-        fav.telephone = [results stringForColumn:@"telephone"];
-        fav.longitude = [results stringForColumn:@"longitude"];
-        fav.latitude = [results stringForColumn:@"latitude"];
-        fav.create_time = [results intForColumn:@"create_time"];
+        NSMutableDictionary *dFav = [[NSMutableDictionary alloc] init];
         
-        [favorites addObject:fav];
+        [dFav setObject: [results stringForColumn:@"name"] forKey: @"name"];
+        [dFav setObject: [results stringForColumn:@"business_id"] forKey: @"business_id"];
+        [dFav setObject: [results stringForColumn:@"s_photo_url"] forKey: @"s_photo_url"];
+        [dFav setObject: [results stringForColumn:@"categories"] forKey: @"categories"];
+        [dFav setObject: [results stringForColumn:@"rating_s_img_url"] forKey: @"rating_s_img_url"];
+        [dFav setObject: [results stringForColumn:@"address"] forKey: @"address"];
+        [dFav setObject: [results stringForColumn:@"telephone"] forKey: @"telephone"];
+        [dFav setObject: [results stringForColumn:@"longitude"] forKey: @"longitude"];
+        [dFav setObject: [results stringForColumn:@"latitude"] forKey: @"latitude"];
+        [dFav setObject: [NSNumber numberWithInt:[results intForColumn:@"create_time"]] forKey: @"create_time"];
+        
+        [favorites addObject:dFav];
         
     }
     
     [db close];
+    
+    NSLog(@">>> Total favorites length: %lu", (unsigned long)favorites.count);
     
     return favorites;
     
@@ -163,11 +191,32 @@
 }//end of insertFavorite
 
 
+-(BOOL) deletAll {
+    FMDatabase *database = [FMDatabase databaseWithPath:[self getDatabasePath]];
+    
+    [database open];
+    BOOL result = [database executeUpdate:@"DELETE FROM favorites"];
+    [database close];
+    
+    return result;
+}
+
+
 -(BOOL) checkExist: (NSString *) bizId {
     FMDatabase *database = [FMDatabase databaseWithPath:[self getDatabasePath]];
     
+    if (bizId == nil) return true;
+    
+    [database open];
+    
     FMResultSet *s = [database executeQuery:@"SELECT COUNT(*) FROM favorites WHERE business_id = ?", bizId];
-    if ([s intForColumnIndex:0]) {
+    int totalCount = 0;
+    if ([s next]) {
+        totalCount = [s intForColumnIndex:0];
+    }
+    [database close];
+    
+    if (totalCount) {
         return true;
     }else{
         return false;
@@ -176,7 +225,7 @@
 
 
 //favorites object serialize...
-- (NSString *) objsToJson: (NSMutableArray *) favos {
+- (NSString *) dicsToJson: (NSMutableArray *) favos {
     NSString *json = [favos JSONString];
     return json;
 }

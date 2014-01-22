@@ -7,6 +7,7 @@
 //
 
 #import "WebViewAppDelegate.h"
+#import "WebViewViewController.h"
 #import "FMDatabase.h"
 
 

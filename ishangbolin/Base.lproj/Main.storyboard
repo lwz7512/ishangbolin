@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2ay-QG-5Hq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Web View View Controller-->
+        <!--Web View View Controller - Home-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="WebViewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homepage" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="WebViewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t0N-0l-EEI"/>
                         <viewControllerLayoutGuide type="bottom" id="YLi-C7-3NC"/>
@@ -16,53 +16,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBI-an-HeJ">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                            <webView contentMode="top" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBI-an-HeJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="565"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="bVf-Sj-0ia"/>
                                 </connections>
                             </webView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9yJ-2y-0bX">
-                                <rect key="frame" x="0.0" y="21" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="宜居柏林" id="HCf-DO-R0F">
-                                        <barButtonItem key="leftBarButtonItem" image="back-25.png" id="spw-3h-mO4">
-                                            <connections>
-                                                <action selector="backClickHandler:" destination="vXZ-lx-hvc" id="KM3-p5-uMB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="EGn-JS-cB2">
-                                            <connections>
-                                                <action selector="markClickHandler:" destination="vXZ-lx-hvc" id="8RU-eP-JXQ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xiu-fp-aey">
-                                <rect key="frame" x="150" y="307" width="20" height="20"/>
+                                <rect key="frame" x="150" y="306" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="宜居柏林" id="2ES-TX-KEs">
+                        <barButtonItem key="leftBarButtonItem" image="back-25.png" id="p0v-Ub-onO">
+                            <connections>
+                                <action selector="backClickHandler:" destination="vXZ-lx-hvc" id="EuZ-70-gVY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="0tM-9F-rlf">
+                            <connections>
+                                <action selector="markClickHandler:" destination="vXZ-lx-hvc" id="zI7-r4-6Qf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="backBtn" destination="spw-3h-mO4" id="uzz-Ed-Vrl"/>
-                        <outlet property="bookmarks" destination="EGn-JS-cB2" id="dvC-rr-693"/>
                         <outlet property="loading" destination="xiu-fp-aey" id="yfq-fG-1B1"/>
                         <outlet property="mainwebview" destination="jBI-an-HeJ" id="NLi-f7-FqB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="-33"/>
+            <point key="canvasLocation" x="408" y="-30"/>
+        </scene>
+        <!--Shop Page View Controller - 商铺页面-->
+        <scene sceneID="qRl-SS-CCB">
+            <objects>
+                <viewController storyboardIdentifier="shopage" title="商铺页面" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xos-lQ-bDs" customClass="ShopPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yle-ib-2IA"/>
+                        <viewControllerLayoutGuide type="bottom" id="GQ5-cU-f0x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oaV-sY-8Dl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2O-Wh-h3i">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="shopView" destination="d2O-Wh-h3i" id="KKW-mO-RNB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NeD-gy-uC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="-30"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g4i-ch-GkU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ay-QG-5Hq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="1oz-Bx-x0y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="ncx-kg-nPB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygn-lk-Wqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="-30"/>
         </scene>
     </scenes>
     <resources>
