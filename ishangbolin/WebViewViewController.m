@@ -27,7 +27,7 @@
     [super viewDidLoad];
     
     //NSString *url=@"http://162.243.231.159:3000/ngapp/dist";
-    NSString *url = @"http://172.168.1.124:3000/ngapp/app";
+    NSString *url = @"http://172.168.1.6:3000/ngapp/app";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [self.mainwebview loadRequest:request];
     
